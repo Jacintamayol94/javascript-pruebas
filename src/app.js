@@ -9,6 +9,7 @@ const app = express();
 const moviesRoutes = require('./routes/moviesRoutes');
 const genresRoutes = require('./routes/genresRoutes');
 const mainRoutes = require('./routes/mainRoutes');
+const userRoutes = require('./routes/userRoutes');
 
 //Aquí llamo a la ruta de las api de movies
 const apiMoviesRouter = require('./routes/api/movies')
@@ -33,6 +34,7 @@ app.use(methodOverride('_method'));
 app.use('/', mainRoutes);
 app.use(moviesRoutes);
 app.use(genresRoutes);
+app.use(userRoutes);
 //Aquí creo la colección de mis recursos de movies (APIs)
 app.use('/api/movies',apiMoviesRouter);
 app.use('/api/actors',apiActorsRouter);
